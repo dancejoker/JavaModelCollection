@@ -1,5 +1,7 @@
 package Prototype;
 
+import java.io.IOException;
+
 /**
  * 浅复制：将一个对象复制后，基本数据类型的变量都会重新创建，
  * 而引用类型，指向的还是原对象所指向的。
@@ -13,23 +15,16 @@ package Prototype;
  * Created by ddp on 2017/11/12.
  */
 public class Proto_Test {
-    public static void main(String[] args) throws CloneNotSupportedException {
-        Prototype prototype = new Prototype();
-        prototype.setString("A");
-        SerializableObject serialnum = new SerializableObject();
-        serialnum.setNum(1);
-        serialnum.setSerialVersionUID(20L);
-        prototype.setObj(serialnum);
+    public static void main(String[] args) throws CloneNotSupportedException, IOException, ClassNotFoundException {
+        ClassRoom classRoom = new ClassRoom(20, "张三");
+        Prototype prototype = new Prototype("王老师", classRoom);
+        Prototype prototype2 = (Prototype) prototype.deepclone();
 
-        Prototype copyProtype = (Prototype) prototype.clone();
+        prototype2.setTeacher("王浩");
+        prototype2.getClassRoom().setStu_num(10);
+        prototype2.getClassRoom().setTeacher_name("王麻子");
 
-        SerializableObject serialnum2 = new SerializableObject();
-        serialnum2.setNum(2);
-        serialnum2.setSerialVersionUID(200L);
-        copyProtype.setObj(serialnum2);
-        copyProtype.setString("B");
-
-        System.out.println(prototype);
-        System.out.println(copyProtype);
+        System.out.println(prototype.getClassRoom().getStu_num() + " " + prototype.getClassRoom().getTeacher_name() + " " + prototype.getTeacher());
+        System.out.println(prototype2.getClassRoom().getStu_num() + " " + prototype2.getClassRoom().getTeacher_name() + " "  + prototype2.getTeacher());
     }
 }

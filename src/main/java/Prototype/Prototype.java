@@ -6,16 +6,18 @@ import java.io.*;
  * Created by ddp on 2017/11/12.
  */
 public class Prototype implements Cloneable,Serializable {
-    private static final long serialVersionUID = 1L;
-    private String string;
-    private SerializableObject obj;
+    public String teacher;
+    public ClassRoom classRoom = null;
 
-    public Object clone() throws CloneNotSupportedException {
-        Prototype proto = (Prototype) super.clone();
-        return proto;
+    protected Prototype clone() throws CloneNotSupportedException {
+        Prototype clone = (Prototype) super.clone();
+        return clone;
     }
 
-
+    public Prototype(String teacher, ClassRoom classRoom) {
+        this.teacher = teacher;
+        this.classRoom = classRoom;
+    }
     /**
      * 要实现深复制，
      * 需要采用流的形式读入当前对象的二进制输入，
@@ -33,31 +35,28 @@ public class Prototype implements Cloneable,Serializable {
         return ois.readObject();
     }
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
+
+    public String getTeacher() {
+        return teacher;
     }
 
-    public String getString() {
-        return string;
+    public void setTeacher(String teacher) {
+        this.teacher = teacher;
     }
 
-    public void setString(String string) {
-        this.string = string;
+    public ClassRoom getClassRoom() {
+        return classRoom;
     }
 
-    public SerializableObject getObj() {
-        return obj;
+    public void setClassRoom(ClassRoom classRoom) {
+        this.classRoom = classRoom;
     }
 
-    public void setObj(SerializableObject obj) {
-        this.obj = obj;
-    }
-
-    @Override
-    public String toString() {
-        return "Prototype{" +
-                "string='" + string + '\'' +
-                ", obj=" + obj +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Prototype{" +
+//                "teacher='" + teacher + '\'' +
+//                ", classRoom=" + classRoom +
+//                '}';
+//    }
 }
