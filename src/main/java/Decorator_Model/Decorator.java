@@ -1,6 +1,7 @@
 package Decorator_Model;
 
 /**
+ * 修饰类
  * Created by ddp on 2017/11/17.
  */
 public class Decorator implements Sourceable {
