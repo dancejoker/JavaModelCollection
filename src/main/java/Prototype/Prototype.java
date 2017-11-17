@@ -22,6 +22,10 @@ public class Prototype implements Cloneable,Serializable {
      * 要实现深复制，
      * 需要采用流的形式读入当前对象的二进制输入，
      * 再写出二进制数据对应的对象
+     *
+     * 利用串行化来做深复制
+     * 把对象写道流里的过程是串行化(Serilization)过程;把对象从流中读出来是并行化(Deserialization)过程.
+     * 写在流里的是对象的一个拷贝,然后再从流里读出来重建对象.
      */
     public Object deepclone() throws IOException, ClassNotFoundException {
         /* 写入当前对象的二进制流 */

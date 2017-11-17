@@ -1,4 +1,4 @@
-package Adapter_Model.ClassBestDemo;
+package Adapter_Model.ObjectBestDemo;
 
 /**
  * Created by ddp on 2017/11/12.

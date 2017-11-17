@@ -1,4 +1,4 @@
-package Adapter_Model.ClassBestDemo;
+package Adapter_Model.ObjectBestDemo;
 
 /**
  * 去美国旅游，必须带上一个“美国适配器”：实现两孔插座，组合三孔插座。用来给我的三星手机充电

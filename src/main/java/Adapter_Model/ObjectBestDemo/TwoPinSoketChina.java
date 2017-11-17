@@ -1,4 +1,4 @@
-package Adapter_Model.ClassBestDemo;
+package Adapter_Model.ObjectBestDemo;
 
 /**
  * client(具体的adaptee) ———— 这个就是我在中国的墙上的两个插孔的插座，我充电只能用这个
