@@ -1,4 +1,4 @@
-package Facade_Mode;
+package Facade_Model;
 
 /**
  * 门面角色

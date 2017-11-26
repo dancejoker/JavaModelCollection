@@ -15,8 +15,6 @@ public class ConnectionPool {
     private String password = "wangqi123";
     private String driverClassName = "com.mysql.jdbc.Driver";
 
-    //已经创建的个数
-    private static int hasCreatedConnection = 0;
     //还在线程池中连接
     private static int ConnectionInPool=0;
 
@@ -34,7 +32,6 @@ public class ConnectionPool {
     /*构造方法，做一些初始化工作*/
     private ConnectionPool() throws Exception {
         pool = new Vector<Connection>(poolSize);
-        hasCreatedConnection = poolSize;
         ConnectionInPool = poolSize;
         for(int i = 0;i < poolSize;++i){
                 Class.forName(driverClassName);
