@@ -5,7 +5,7 @@ package Template_Model.Person_Work_Model;
  */
 public class Client {
     public static void main(String[] args) {
-        Student student = new Student();
+        AbstractPerson student = new Student();
         student.prepareGotoSchool();
 
         Teacher teacher  = new Teacher();
